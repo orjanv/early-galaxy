@@ -12,6 +12,8 @@ from oauth2client import client
 from googleapiclient import sample_tools
 import sys, argparse
 
+# The blog id we are posting to
+myblogid = 8032756911295504398
 
 def main(argv):
     # Set up the optional and required arguments for posting to blogger
@@ -42,9 +44,6 @@ def main(argv):
         scope='https://www.googleapis.com/auth/blogger',
         parents=[parent])
     try:
-        # The blog id we are posting to
-        myblogid = 8032756911295504398
-
         # Make the POST request
         posts = service.posts()
         request = posts.insert(blogId=myblogid, body=
