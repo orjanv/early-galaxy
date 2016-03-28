@@ -1,5 +1,5 @@
 # Early Galaxy
-Simple command-line tool for posting to Blogger. This script was written to enable posting to a blogger.com blog from the command line automatically. It is really a part of an earlier project which stopped working due to Google pulled the support for OAuth1.0 and the googlecl tool stopped working. To my suprise, no one has rewritten that tool as of March 2016 and therefore the need for this specific script. 
+Simple command-line tool for posting to Blogger. This script was written to enable posting to a blogger.com blog from the command line automatically. It is really a part of an earlier project which stopped working due to Google pulled the support for OAuth 1.0 and the googlecl tool stopped working. To my suprise, no one has rewritten that tool as of March 2016 and therefore the need for this specific script. 
 
 ## Requirements
 You will need to install the google-api using pip:
@@ -20,36 +20,36 @@ Follow these steps to get up and running with the script. The project used in th
 1. Go to: https://console.developers.google.com/apis/credentials?project=_
 2. Create a new project
 
-![](assets/blogger-1.png)
+    ![](assets/blogger-1.png)
 
 3. Enable Blogger API
 
-![](assets/blogger-2.png)
-![](assets/blogger-3.png)
+    ![](assets/blogger-2.png)
+    ![](assets/blogger-3.png)
 
 4. Create credentials (OAuth client ID)
 
-![](assets/blogger-4.png)
-![](assets/blogger-5.png)
-![](assets/blogger-6.png)
-![](assets/blogger-7.png)
-![](assets/blogger-8.png)
-![](assets/blogger-9.png)
+    ![](assets/blogger-4.png)
+    ![](assets/blogger-5.png)
+    ![](assets/blogger-6.png)
+    ![](assets/blogger-7.png)
+    ![](assets/blogger-8.png)
+    ![](assets/blogger-9.png)
 
 5. Download JSON and save as client_secrets.json in the same folder as the script
 
-![](assets/blogger-10.png)
+    ![](assets/blogger-10.png)
 
 If you want, you can format the JSON code using: http://www.jsoneditoronline.org
 
-![](assets/blogger-11.png)
-![](assets/blogger-12.png)
+    ![](assets/blogger-11.png)
+    ![](assets/blogger-12.png)
 
 6. You also need to change the blogID at the beginning of the script to match the blog you want to post to. This ID is visible when you are logged into Blogger.com with your Google account.
 
-```bash
-myblogid = 8032756911295504398
-```
+    ```bash
+    myblogid = 8032756911295504398
+    ```
 
 ## Usage
 
