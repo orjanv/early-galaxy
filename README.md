@@ -1,5 +1,5 @@
 # Early Galaxy
-Simple command-line tool for posting to Blogger. This script was written to enable posting to a blogger.com blog from the command line automatically. It is really a part of ![an earlier project](https://github.com/orjanv/hiddenhaikus) which stopped working due to Google pulled the support for OAuth 1.0 and the googlecl tool stopped working. To my suprise, no one has rewritten that tool as of March 2016 and therefore the need for this specific script. 
+Simple command-line tool for posting to Blogger. This script was written to enable posting to a blogger.com blog from the command line automatically. It is really a part of ![an earlier project](https://github.com/orjanv/hiddenhaikus) which stopped working due to Google pulled the support for OAuth 1.0 and the ![GoogleCL](https://code.google.com/archive/p/googlecl/) tool stopped working. To my suprise, no one has rewritten that tool as of March 2016 and therefore the need for this specific script. 
 
 ## Requirements
 You will need to install the google-api using pip:
