@@ -40,7 +40,7 @@ Follow these steps to get up and running with the script. The project used in th
 
     ![](assets/blogger-10.png)
 
-If you want, you can format the JSON code using: http://www.jsoneditoronline.org
+    If you want, you can format the JSON code using: ![www.jsoneditoronline.org](http://www.jsoneditoronline.org)
 
     ![](assets/blogger-11.png)
     ![](assets/blogger-12.png)
@@ -56,14 +56,14 @@ If you want, you can format the JSON code using: http://www.jsoneditoronline.org
 To use the script, you need to run the script with a couple of arguments:
 
 ```bash
- --title "Your blog post title"
- --src <file containing your blogpost written in html>
+--title "Your blog post title"
+--src <file containing your blogpost written in html>
 ```
 
 an optional argument can be used
 
 ```bash
- --label "labels, separated, by, comma" 
+--label "labels, separated, by, comma" 
 ```
 
 ## Example
@@ -72,5 +72,5 @@ an optional argument can be used
 $ python blogger.py --title "Five nice haiku poems" --labels "haiku" --src haiku.html 
 ``` 
 
-Enjoy posting from the command line.
+Enjoy posting from the command line!
 
