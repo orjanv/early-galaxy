@@ -68,9 +68,18 @@ an optional argument can be used
 
 ## Example
 
+### Post to blogger
+
 ```bash
 $ python blogger.py --title "Five nice haiku poems" --labels "haiku" --src haiku.html 
 ``` 
+
+### Get your blogIDs (not yet implemented)
+
+```bash
+$ python blogger.py --blogs
+```
+
 
 Enjoy posting from the command line!
 

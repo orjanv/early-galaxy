@@ -17,13 +17,42 @@ myblogid = 8032756911295504398
 
 def main(argv):
     # Set up the optional and required arguments for posting to blogger
+    # the add_help is set to false as there will be a conflict with the 
+    # package sample_tools_init() which also provide a --help argument. 
+    # That is also why the help is hardcoded below too.
     parent = argparse.ArgumentParser(add_help=False, conflict_handler='resolve')
     group = parent.add_argument_group('standard')
-    parent.add_argument("-t", "--title", help="Title for the blog post", required = True)
+    parent.add_argument("-t", "--title", help="Title for the blog post")
     parent.add_argument("-l", "--labels", help="Labels for the blog post")
-    parent.add_argument("-s", "--src", help="Sourcefile for the blog post content", required = True)
+    parent.add_argument("-b", "--blogs", help="List all your blogs and get their ID", action="store_true")
+    parent.add_argument("-s", "--src", help="Sourcefile for the blog post content")
     args = parent.parse_args()
 
+    # Authenticate and construct service, also inclue argparse arguments
+    service, flags = sample_tools.init(
+        argv, 'blogger', 'v3', __doc__, __file__,
+        scope='https://www.googleapis.com/auth/blogger',
+        parents=[parent])
+
+    if (len(sys.argv) <= 1):
+        print('Usage: $ python blogger.py \n\n\t\
+--title "TITLE" (Title for the blog post)\n\t\
+--labels "LABEL1, LABEL2" (Labels for the blog post)\n\t\
+--src SOURCEFILE (Sourcefile for the blog post content)')
+        print('\nYou can also use it to grab your blogIDs:\n\n\
+$ python blogger.py --blogs (List all your blogs and get their ID)')
+        exit(1)
+
+    if args.blogs:
+        #print("Look for blogIDs (Not yet implemented)")
+        blogs = service.blogs()
+
+        # Retrieve the list of Blogs this user has write privileges on
+        thisusersblogs = blogs.listByUser(userId='self').execute()
+        for blog in thisusersblogs['items']:
+            print('The blog named \'%s\' has the id: %s' % (blog['name'], blog['id']))
+            exit(1)
+            
     # Assign argument values to variables
     flags = parent.parse_args(argv[1:])
     blogtitle = flags.title
@@ -38,11 +67,6 @@ def main(argv):
         print("Sourcefile not found.")
         exit(1)
     
-    # Authenticate and construct service, also inclue argparse arguments
-    service, flags = sample_tools.init(
-        argv, 'blogger', 'v3', __doc__, __file__,
-        scope='https://www.googleapis.com/auth/blogger',
-        parents=[parent])
     try:
         # Make the POST request
         posts = service.posts()
