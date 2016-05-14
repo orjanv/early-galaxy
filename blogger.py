@@ -56,7 +56,7 @@ $ python blogger.py --blogs (List all your blogs and get their ID)')
     # Assign argument values to variables
     flags = parent.parse_args(argv[1:])
     blogtitle = flags.title
-    blogtags = flags.labels
+    blogtags = flags.labels.split(",") #fix by @Konstantinusz
     blogfilename = flags.src
     
     try:
